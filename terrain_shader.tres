@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://dpmgjki0snxki"]
+
+[ext_resource type="Shader" path="res://terrain.gdshader" id="1_jqpoy"]
+[ext_resource type="Texture2D" uid="uid://du3pp6glgu028" path="res://Art/Textures/Grass.png" id="2_ykkts"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l5m7a"]
+frequency = 0.001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wmcv0"]
+noise = SubResource("FastNoiseLite_l5m7a")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jqpoy")
+shader_parameter/texture_tiling = 5.0
+shader_parameter/height = 0.404
+shader_parameter/light_intensity = 3.0
+shader_parameter/heightmap = SubResource("NoiseTexture2D_wmcv0")
+shader_parameter/grass_texture = ExtResource("2_ykkts")
