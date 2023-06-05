@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://da84rgan4s42x"]
+
+[ext_resource type="Script" path="res://Scripts/env/terrain.gd" id="1_qgclk"]
+[ext_resource type="Material" uid="uid://dqjt6i5pb37s5" path="res://wood.tres" id="2_kf6n7"]
+[ext_resource type="Material" uid="uid://5051okxkg3qt" path="res://fabric.tres" id="3_vp257"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ewsdh"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ly6yh"]
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k8ynp"]
+
+[node name="terrain" type="Node3D"]
+script = ExtResource("1_qgclk")
+
+[node name="borders" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="borders"]
+transform = Transform3D(0.095149, 0, 0, 0, 0.511397, 0, 0, 0, 2.14365, -1.04202, 0, 0)
+material_override = ExtResource("2_kf6n7")
+mesh = SubResource("BoxMesh_ewsdh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="borders"]
+transform = Transform3D(0.095149, 0, 0, 0, 0.511397, 0, 0, 0, 2.14365, 1.041, 0, 0)
+material_override = ExtResource("2_kf6n7")
+mesh = SubResource("BoxMesh_ewsdh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="borders"]
+transform = Transform3D(-4.1591e-09, 0, 2.16133, 0, 0.511397, 0, -0.095149, 0, -9.44749e-08, -0.00201988, 0, 1.04369)
+material_override = ExtResource("2_kf6n7")
+mesh = SubResource("BoxMesh_ewsdh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="borders"]
+transform = Transform3D(-4.1591e-09, 0, 2.18268, 0, 0.511397, 0, -0.095149, 0, -9.54082e-08, 0.000385523, 0, -1.04088)
+material_override = ExtResource("2_kf6n7")
+mesh = SubResource("BoxMesh_ewsdh")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ly6yh")
+
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, -0.151103, 0)
+material_override = ExtResource("3_vp257")
+mesh = SubResource("PlaneMesh_k8ynp")
+
+[node name="highlights" type="Node3D" parent="."]

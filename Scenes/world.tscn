@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=3 uid="uid://djdx8tni2kk4b"]
+
+[ext_resource type="PackedScene" uid="uid://da84rgan4s42x" path="res://Scenes/env/terrain.tscn" id="1_78rib"]
+[ext_resource type="Material" uid="uid://dpmgjki0snxki" path="res://terrain_shader.tres" id="2_akr2t"]
+[ext_resource type="PackedScene" uid="uid://blvc54il8nlh7" path="res://Scenes/env/highlight.tscn" id="3_whmgb"]
+[ext_resource type="PackedScene" uid="uid://drbypb647y0a6" path="res://Scenes/GM.tscn" id="4_jqala"]
+[ext_resource type="PackedScene" uid="uid://bpo3j8p58lflm" path="res://Scenes/actors/player.tscn" id="5_gu6w1"]
+[ext_resource type="PackedScene" uid="uid://csy75lt51xvnl" path="res://Art/Models/dice.glb" id="6_b2bgb"]
+[ext_resource type="PackedScene" uid="uid://mhnllydmyjv5" path="res://Art/Models/cards.glb" id="7_yw0p2"]
+[ext_resource type="PackedScene" uid="uid://2fhulsugvdim" path="res://Art/Models/mug.glb" id="8_hwsrd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ubgbv"]
+sky_horizon_color = Color(0.6, 0.666667, 0.717647, 1)
+
+[sub_resource type="Sky" id="Sky_x644o"]
+sky_material = SubResource("ProceduralSkyMaterial_ubgbv")
+
+[sub_resource type="Environment" id="Environment_unqdr"]
+background_mode = 2
+sky = SubResource("Sky_x644o")
+tonemap_mode = 2
+fog_sun_scatter = 0.31
+fog_density = 0.003
+fog_sky_affect = 0.0
+adjustment_enabled = true
+adjustment_contrast = 1.18
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ovw0q"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 332.86
+dof_blur_far_transition = -1.0
+dof_blur_near_distance = 87.17
+dof_blur_amount = 0.09
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iwusg"]
+noise_type = 5
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rg7vk"]
+noise = SubResource("FastNoiseLite_iwusg")
+
+[node name="root" type="Node3D"]
+
+[node name="GameMaster" parent="." instance=ExtResource("4_jqala")]
+player_scene = ExtResource("5_gu6w1")
+player_count = 1
+ending_scene = "res://Scenes/end_game.tscn"
+starting_money = 10
+enemy_spawn_chance = 1.0
+terrain_path = NodePath("../terrain")
+camera_speed = 0.07
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.978206, -0.124525, -0.166154, 0.207639, 0.586652, 0.782768, 0, -0.800208, 0.599722, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 357.6
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_unqdr")
+camera_attributes = SubResource("CameraAttributesPractical_ovw0q")
+
+[node name="terrain" parent="." instance=ExtResource("1_78rib")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+terrain_shader = ExtResource("2_akr2t")
+highlight_scene = ExtResource("3_whmgb")
+event_bias = 0.4
+highlight_density = 5
+highlight_repartition = SubResource("NoiseTexture2D_rg7vk")
+highlight_low_margin = 0.1
+highlight_k = 4
+
+[node name="dice" parent="." instance=ExtResource("6_b2bgb")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -110.603, -8.34181, 12.5108)
+
+[node name="cards" parent="." instance=ExtResource("7_yw0p2")]
+transform = Transform3D(13.9516, 0, -14.3302, 0, 20, 0, 14.3302, 0, 13.9516, 94.786, -7.75922, -51.7398)
+
+[node name="mug" parent="." instance=ExtResource("8_hwsrd")]
+transform = Transform3D(-1.1251, 0, -0.992046, 0, 1.5, 0, 0.992046, 0, -1.1251, 99.9454, -6.44174, 84.4312)

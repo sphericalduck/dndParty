@@ -1,0 +1,137 @@
+[gd_scene load_steps=6 format=3 uid="uid://x5gusvro3lqe"]
+
+[ext_resource type="Texture2D" uid="uid://c3ervts2gw5pp" path="res://Art/Sprites/UI/plus-sign-inside-a-box-svgrepo-com.png" id="1_4l04e"]
+[ext_resource type="Script" path="res://Scripts/misc/Selection_screen.gd" id="1_hchq2"]
+[ext_resource type="FontFile" uid="uid://yxv8m0yet72s" path="res://Art/OldLondon.ttf" id="2_nuxhx"]
+[ext_resource type="PackedScene" uid="uid://vgciq0vp550a" path="res://Scenes/UI/Character.tscn" id="3_yrrd6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ii8fg"]
+bg_color = Color(0.67451, 0.67451, 0.67451, 1)
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hchq2")
+main_scene = "res://Scenes/world.tscn"
+character_card_scene = ExtResource("3_yrrd6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.168627, 0.168627, 0.168627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.8
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -72.5
+offset_right = 73.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ii8fg")
+icon = ExtResource("1_4l04e")
+expand_icon = true
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -72.5
+offset_right = 73.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ii8fg")
+icon = ExtResource("1_4l04e")
+expand_icon = true
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/ColorRect3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -72.5
+offset_right = 73.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ii8fg")
+icon = ExtResource("1_4l04e")
+expand_icon = true
+
+[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/ColorRect4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -72.5
+offset_right = 73.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ii8fg")
+icon = ExtResource("1_4l04e")
+expand_icon = true
+
+[node name="start_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_nuxhx")
+theme_override_font_sizes/font_size = 45
+text = "jouer"

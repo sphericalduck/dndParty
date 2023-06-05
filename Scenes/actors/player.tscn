@@ -1,0 +1,523 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpo3j8p58lflm"]
+
+[ext_resource type="Script" path="res://Scripts/actors/player.gd" id="1_cx6ur"]
+[ext_resource type="FontFile" uid="uid://yxv8m0yet72s" path="res://Art/OldLondon.ttf" id="2_uuhyp"]
+[ext_resource type="Texture2D" uid="uid://sfqrpfy7qdih" path="res://Art/Sprites/UI/Pointer.png" id="3_0xdhw"]
+[ext_resource type="Texture2D" uid="uid://c0s8iyc38xqd7" path="res://Art/Sprites/UI/rupee.webp" id="3_m41o7"]
+[ext_resource type="Texture2D" uid="uid://yk07rnid2x4d" path="res://Art/Sprites/UI/player.png" id="4_7622a"]
+[ext_resource type="Texture2D" uid="uid://bvancxaok2xvi" path="res://Art/Sprites/Items/fuite.png" id="4_qspsj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_134en"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqx0q"]
+bg_color = Color(0.352941, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36o23"]
+bg_color = Color(1, 0.27451, 0.196078, 1)
+border_color = Color(1, 0.713726, 0.713726, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6ios"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_cx6ur")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dialogueBox" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -262.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="UI/dialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.262745, 0.262745, 0.262745, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/dialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/dialogueBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.803922, 0.694118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 49
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae felis velit. Integer rutrum faucibus nibh eu venenatis. Ut eget est blandit ante vulputate feugiat. Phasellus cursus, felis quis convallis."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 4
+
+[node name="choices" type="VBoxContainer" parent="UI/dialogueBox/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UI/dialogueBox/HBoxContainer/choices"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 37
+text = "une option random"
+alignment = 0
+
+[node name="Button2" type="Button" parent="UI/dialogueBox/HBoxContainer/choices"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 37
+text = "une option random"
+alignment = 0
+
+[node name="Button3" type="Button" parent="UI/dialogueBox/HBoxContainer/choices"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 37
+text = "une option random"
+alignment = 0
+
+[node name="Button4" type="Button" parent="UI/dialogueBox/HBoxContainer/choices"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 37
+text = "une option random"
+alignment = 0
+
+[node name="Button5" type="Button" parent="UI/dialogueBox/HBoxContainer/choices"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 37
+text = "une option random"
+alignment = 0
+
+[node name="Button6" type="Button" parent="UI/dialogueBox/HBoxContainer/choices"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 37
+text = "une option random"
+alignment = 0
+
+[node name="skip" type="Button" parent="UI/dialogueBox"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 219.0
+offset_right = 106.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 35
+text = "skip"
+
+[node name="name" type="Panel" parent="UI/dialogueBox"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -26.0
+offset_right = 153.0
+offset_bottom = 25.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_134en")
+
+[node name="Label" type="Label" parent="UI/dialogueBox/name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 35
+text = "test name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="money" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -113.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = 61.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/money"]
+layout_mode = 2
+texture = ExtResource("3_m41o7")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="UI/money"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 59
+text = "00"
+horizontal_alignment = 2
+
+[node name="skips" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_top = 65.0
+offset_right = -8.0
+offset_bottom = 116.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/skips"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.58
+texture = ExtResource("4_qspsj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/skips"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 2
+
+[node name="tooltip" type="Control" parent="UI"]
+z_index = 2
+anchors_preset = 0
+offset_right = 257.0
+offset_bottom = 322.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/tooltip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.262745, 0.262745, 0.262745, 0.709804)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/tooltip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 11.0
+offset_right = -10.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="price" type="HBoxContainer" parent="UI/tooltip/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/tooltip/VBoxContainer/price"]
+layout_mode = 2
+texture = ExtResource("3_m41o7")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="UI/tooltip/VBoxContainer/price"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.803922, 0.694118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 59
+text = "00"
+horizontal_alignment = 2
+
+[node name="name" type="Label" parent="UI/tooltip/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.803922, 0.694118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 50
+text = "sample item"
+autowrap_mode = 2
+
+[node name="desc" type="Label" parent="UI/tooltip/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 25
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae felis velit. Integer rutrum faucibus nibh eu venenatis."
+autowrap_mode = 2
+
+[node name="healthBar" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -199.42
+offset_top = 120.0
+offset_right = 0.579346
+offset_bottom = 160.0
+grow_horizontal = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/healthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_right = -8.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_pqx0q")
+theme_override_styles/fill = SubResource("StyleBoxFlat_36o23")
+max_value = 1.0
+step = 0.0
+value = 1.0
+fill_mode = 1
+show_percentage = false
+
+[node name="inventory" type="Control" parent="UI"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -272.0
+offset_right = 250.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.262745, 0.262745, 0.262745, 1)
+
+[node name="items" type="HBoxContainer" parent="UI/inventory"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -119.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/inventory/items"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6ios")
+
+[node name="TextureRect" type="TextureRect" parent="UI/inventory/items/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Panel2" type="Panel" parent="UI/inventory/items"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6ios")
+
+[node name="TextureRect" type="TextureRect" parent="UI/inventory/items/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Panel3" type="Panel" parent="UI/inventory/items"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6ios")
+
+[node name="TextureRect" type="TextureRect" parent="UI/inventory/items/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Panel4" type="Panel" parent="UI/inventory/items"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6ios")
+
+[node name="TextureRect" type="TextureRect" parent="UI/inventory/items/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="quetes" type="HBoxContainer" parent="UI/inventory"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 31.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/inventory/quetes"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6ios")
+
+[node name="TextureRect" type="TextureRect" parent="UI/inventory/quetes/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Panel2" type="Panel" parent="UI/inventory/quetes"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6ios")
+
+[node name="TextureRect" type="TextureRect" parent="UI/inventory/quetes/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Panel3" type="Panel" parent="UI/inventory/quetes"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6ios")
+
+[node name="TextureRect" type="TextureRect" parent="UI/inventory/quetes/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Panel4" type="Panel" parent="UI/inventory/quetes"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6ios")
+
+[node name="TextureRect" type="TextureRect" parent="UI/inventory/quetes/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/inventory"]
+layout_mode = 2
+offset_right = 144.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 25
+text = "Objets possédés"
+
+[node name="Label2" type="Label" parent="UI/inventory"]
+layout_mode = 2
+offset_top = 154.0
+offset_right = 144.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("2_uuhyp")
+theme_override_font_sizes/font_size = 25
+text = "Quêtes en cours"
+
+[node name="sprite" type="Sprite3D" parent="."]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 0, 0, 0)
+modulate = Color(1, 0, 0, 1)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_7622a")
+
+[node name="arrow_moving" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+modulate = Color(0, 0.623529, 1, 1)
+pixel_size = 0.3
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_0xdhw")
+vframes = 10
+
+[node name="quests" type="Node3D" parent="."]
+
+[node name="Sprite3D0" type="Sprite3D" parent="quests"]
+
+[node name="Sprite3D1" type="Sprite3D" parent="quests"]
+
+[node name="Sprite3D2" type="Sprite3D" parent="quests"]
+
+[node name="Sprite3D3" type="Sprite3D" parent="quests"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.821149, 0.570714, 0, -0.570714, 0.821149, 0, 0, 0)
+spring_length = 15.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]

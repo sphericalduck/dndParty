@@ -1,0 +1,123 @@
+[gd_scene load_steps=6 format=3 uid="uid://vgciq0vp550a"]
+
+[ext_resource type="Script" path="res://Scripts/misc/Character_UI.gd" id="1_g2d3p"]
+[ext_resource type="FontFile" uid="uid://yxv8m0yet72s" path="res://Art/OldLondon.ttf" id="1_ib8lp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1x6a2"]
+bg_color = Color(0.351563, 0.351563, 0.351563, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckeno"]
+bg_color = Color(0.505882, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lhmy"]
+bg_color = Color(0.690196, 0.231373, 0.188235, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g2d3p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.14
+theme_override_fonts/font = ExtResource("1_ib8lp")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_1x6a2")
+placeholder_text = "nom du joueur"
+alignment = 1
+expand_to_text_length = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="n" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 13
+theme_override_colors/font_color = Color(1, 0.803922, 0.694118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ib8lp")
+theme_override_font_sizes/font_size = 35
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 13
+max_value = 4.0
+
+[node name="hp" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 13
+theme_override_colors/font_color = Color(1, 0.803922, 0.694118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ib8lp")
+theme_override_font_sizes/font_size = 30
+text = "points de vie : 99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="phres" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 13
+theme_override_fonts/font = ExtResource("1_ib8lp")
+theme_override_font_sizes/font_size = 20
+text = "résistance aux attaques physiques"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="phpercent" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.22
+theme_override_styles/background = SubResource("StyleBoxFlat_ckeno")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6lhmy")
+max_value = 1.0
+step = 0.0
+value = 1.0
+show_percentage = false
+
+[node name="mtres2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 13
+theme_override_fonts/font = ExtResource("1_ib8lp")
+theme_override_font_sizes/font_size = 20
+text = "résistance aux attaques mentales"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mtpercent" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.22
+theme_override_styles/background = SubResource("StyleBoxFlat_ckeno")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6lhmy")
+max_value = 1.0
+step = 0.0
+value = 0.514
+show_percentage = false

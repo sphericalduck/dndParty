@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxds5j33r2afg"]
+
+[ext_resource type="Script" path="res://Scripts/misc/end_game.gd" id="1_3x0wq"]
+[ext_resource type="FontFile" uid="uid://yxv8m0yet72s" path="res://Art/OldLondon.ttf" id="1_5e55i"]
+[ext_resource type="Texture2D" uid="uid://bu2l8pescxrg5" path="res://Art/Sprites/Background/Fondo.png" id="1_hnstb"]
+[ext_resource type="Texture2D" uid="uid://bxikib6pxcb7l" path="res://Art/Sprites/Background/Mar background.png" id="1_rwsal"]
+[ext_resource type="Texture2D" uid="uid://ch3jr0i7gso8f" path="res://Art/Sprites/Background/Nubes Background.png" id="2_mr5jt"]
+
+[node name="root" type="Node"]
+script = ExtResource("1_3x0wq")
+main_menu_scene = "res://Scenes/UI/Selection_screen.tscn"
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="UI/background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hnstb")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mr5jt")
+
+[node name="TextureRect" type="TextureRect" parent="UI/background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rwsal")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="name" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.803922, 0.694118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5e55i")
+theme_override_font_sizes/font_size = 60
+text = "player_name a gagné !"
+horizontal_alignment = 1
+
+[node name="icon" type="TextureRect" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.87
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="UI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_5e55i")
+theme_override_font_sizes/font_size = 40
+text = "Retourner au menu principal"
